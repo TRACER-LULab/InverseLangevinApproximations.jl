@@ -1,30 +1,25 @@
-"""
-This script builds the Pollen.jl documentation so that it can be loaded
-by the frontend. It accepts one argument: the path where the generated
-files should be stored.
+using InverseLangevinApproximations
+using Documenter
 
-    > julia docs/make.jl DIR TAG
+DocMeta.setdocmeta!(InverseLangevinApproximations, :DocTestSetup, :(using InverseLangevinApproximations); recursive=true)
 
-Use `./serve.jl` for interactive development.
-"""
-
-# Create target folder
-length(ARGS) != 2 && error("Please pass a file path and a version tag to make.jl:\n\t> julia docs/make.jl \$DIR \$TAG ")
-DIR = abspath(mkpath(ARGS[1]))
-TAG = ARGS[2]
-
-# Create Project
-createproject = include("project.jl")
-project = createproject(tag = TAG)
-
-@info "Rewriting documents..."
-Pollen.rewritesources!(project)
-
-@info "Writing to disk at \"$DIR\"..."
-Pollen.build(
-    FileBuilder(
-        JSONFormat(),
-        DIR,
+makedocs(;
+    modules=[InverseLangevinApproximations],
+    authors="Carson Farmer <59753859+cfarm6@users.noreply.github.com> and contributors",
+    repo="https://github.com/cfarm6/InverseLangevinApproximations.jl/blob/{commit}{path}#{line}",
+    sitename="InverseLangevinApproximations.jl",
+    format=Documenter.HTML(;
+        prettyurls=get(ENV, "CI", "false") == "true",
+        canonical="https://cfarm6.github.io/InverseLangevinApproximations.jl",
+        edit_link="main",
+        assets=String[],
     ),
-    project,
+    pages=[
+        "Home" => "index.md",
+    ],
+)
+
+deploydocs(;
+    repo="github.com/cfarm6/InverseLangevinApproximations.jl",
+    devbranch="main",
 )
