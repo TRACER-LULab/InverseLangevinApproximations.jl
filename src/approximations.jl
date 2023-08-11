@@ -1,5 +1,5 @@
 """
-From:
+From [cohen1991pade](@cite):
 
 > Cohen A. A Padé approximant to the inverse Langevin function. Rheologica acta. 1991 May;30:270-3.
 
@@ -58,7 +58,7 @@ end
 """
 From:
 
-> Treloar LG. The physics of rubber elasticity.
+> Treloar LR. The mechanics of rubber elasticity. Proceedings of the Royal Society of London. A. Mathematical and Physical Sciences. 1976 Nov 19;351(1666):301-30.
 
 ```math
 \\mathcal{L}^{-1}(y) = \\frac{3 * y}{(1 - (\\frac{3}{5} * y^2 + \\frac{36}{175} * y^4 + \\frac{108}{875} * y^6))}

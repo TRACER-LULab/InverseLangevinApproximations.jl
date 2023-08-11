@@ -12,3 +12,6 @@ Documentation for [InverseLangevinApproximations](https://github.com/cfarm6/Inve
 ```@autodocs
 Modules = [InverseLangevinApproximations]
 ```
+
+```@bibliography
+```

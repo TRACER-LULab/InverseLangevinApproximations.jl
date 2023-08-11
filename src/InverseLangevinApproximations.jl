@@ -6,6 +6,9 @@ export inverse_langevin_approximation
 
 abstract type AbstractInverseLangevinApproximation end
 
+"""
+
+"""
 @inline function inverse_langevin_approximation(m::AbstractInverseLangevinApproximation, y)
     error("Method is not implemented for $m")
 end
