@@ -1,6 +1,0 @@
-{
-    "README": "/doc/README.md",
-    "Reference": {
-        "InverseLangevinApproximations.jl": "/ref/InverseLangevinApproximations"
-    }
-}

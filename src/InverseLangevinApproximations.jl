@@ -1,6 +1,8 @@
 module InverseLangevinApproximations
 
-export CohenRounded3_2, CohenExact3_2, PusoApproximation, TreloarApproximation, WarnerApproximation, KuhnGrunApproximation, BergstromApproximation, PadeApproximation_1_4, PadeApproximation_1_2, PadeApproximation_5_0, PadeApproximation_3_0, Jedynak2017,PadeApproximation3_2, ArrudaApproximation, inverse_langevin_approximation
+using InteractiveUtils
+
+export inverse_langevin_approximation
 
 abstract type AbstractInverseLangevinApproximation end
 
@@ -9,5 +11,21 @@ abstract type AbstractInverseLangevinApproximation end
 end
 
 include("approximations.jl")
+
+export CohenRounded3_2,
+    CohenExact3_2,
+    PadeApproximation3_2,
+    PusoApproximation,
+    TreloarApproximation,
+    WarnerApproximation,
+    KuhnGrunApproximation,
+    BergstromApproximation,
+    PadeApproximation_1_4,
+    PadeApproximation_1_2,
+    PadeApproximation_5_0,
+    PadeApproximation_3_0,
+    Jedynak2017,
+    NguessongBedaPeyraut,
+    DarabiItskov
 
 end
