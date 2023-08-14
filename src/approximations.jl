@@ -27,7 +27,7 @@ end
 From Ref. [cohen1991pade](@cite):
 
 ```math
-\\mathcal{L}^{-1}(y) \\approx  y * \\frac{(3 - \\frac{36}{35} * y^2)}{(1 - \\frac{33}{35} * y^2)}
+\\mathcal{L}^{-1}(y) \\approx  y  \\frac{(3 - \\frac{36}{35}  y^2)}{(1 - \\frac{33}{35}  y^2)}
 ```
 """
 struct PadeApproximation3_2 <: AbstractInverseLangevinApproximation end
@@ -51,7 +51,7 @@ end
 From Ref. [treloar1976mechanics](@cite):
 
 ```math
-\\mathcal{L}^{-1}(y) \\approx \\frac{3 * y}{(1 - (\\frac{3}{5} * y^2 + \\frac{36}{175} * y^4 + \\frac{108}{875} * y^6))}
+\\mathcal{L}^{-1}(y) \\approx \\frac{3  y}{(1 - (\\frac{3}{5} y^2 + \\frac{36}{175} y^4 + \\frac{108}{875} y^6))}
 ```
 """
 struct TreloarApproximation <: AbstractInverseLangevinApproximation end
@@ -187,7 +187,7 @@ end
 From Ref. [nguessong2014new](@cite):
 
 ```math
-{\\mathcl{L}^{-1}}\\left( y \\right)\\approx y\\frac{3-y^{2}}{1-y^{2}}-0.488y^{3.243}+3.311y^{4.789}\\left( y-0.76 \\right)\\left( y-1 \\right)
+{\\mathcal{L}^{-1}}\\left( y \\right)\\approx y\\frac{3-y^{2}}{1-y^{2}}-0.488y^{3.243}+3.311y^{4.789}\\left( y-0.76 \\right)\\left( y-1 \\right)
 ```
 """
 struct NguessongBedaPeyraut <: AbstractInverseLangevinApproximation end
