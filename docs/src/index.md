@@ -6,9 +6,8 @@ CurrentModule = InverseLangevinApproximations
 
 Documentation for [InverseLangevinApproximations](https://github.com/cfarm6/InverseLangevinApproximations.jl).
 
-Generate an example with Documenter.jl to create a plot from 0 to 1 comparing the results of calling inverse_langevin_approximation for all subtypes of AbstractInverseLangevinApproximatioon from InverseLangevinApproxmations.
 
-```@example
+```@eval
 using Plots
 using InteractiveUtils
 using InverseLangevinApproximations
@@ -23,7 +22,6 @@ for f in fs
     rel_error = abs.((x .- x_true) ./ x_true)
     plot!(p, y, rel_error, label = string(f))
 end
-
 savefig("example.png")
 nothing
 ```
