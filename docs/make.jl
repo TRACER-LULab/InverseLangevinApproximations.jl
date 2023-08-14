@@ -22,6 +22,7 @@ makedocs(bib;
     ),
     pages=[
         "Home" => "index.md",
+        "Approximations" => "methods.md"
     ],
 )
 
