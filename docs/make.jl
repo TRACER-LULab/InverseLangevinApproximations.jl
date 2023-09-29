@@ -27,7 +27,7 @@ makedocs(;
     ],
 )
 
-deploydocs(;
-    # repo="github.com/TRACER-LULab/InverseLangevinApproximations.jl",
-    devbranch="main",
-)
+# deploydocs(;
+#     # repo="github.com/TRACER-LULab/InverseLangevinApproximations.jl",
+#     devbranch="main",
+# )
