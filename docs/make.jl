@@ -28,6 +28,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/TRACER-LULab/InverseLangevinApproximations.jl",
+    repo="github.com/tracer-lulab/InverseLangevinApproximations.jl",
     devbranch="main",
 )

@@ -60,3 +60,5 @@ jobs:
             using InverseLangevinApproximations
             DocMeta.setdocmeta!(InverseLangevinApproximations, :DocTestSetup, :(using InverseLangevinApproximations); recursive=true)
             doctest(InverseLangevinApproximations)'
+      - run: |
+          julia --project=docs docs/make.jl
