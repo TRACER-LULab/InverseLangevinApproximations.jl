@@ -54,11 +54,6 @@ jobs:
       - uses: julia-actions/julia-docdeploy@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
-          julia --project=docs -e '
-            using Documenter: DocMeta, doctest
-            using InverseLangevinApproximations
-            DocMeta.setdocmeta!(InverseLangevinApproximations, :DocTestSetup, :(using InverseLangevinApproximations); recursive=true)
-            doctest(InverseLangevinApproximations)'
+
       - run: |
           julia --project=docs docs/make.jl
