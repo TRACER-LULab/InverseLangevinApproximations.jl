@@ -13,7 +13,7 @@ makedocs(;
     plugins = [bib],
     modules=[InverseLangevinApproximations],
     authors="Carson Farmer <59753859+cfarm6@users.noreply.github.com> and contributors",
-    repo="https://github.com/TRACER-LULab/InverseLangevinApproximations.jl/blob/{commit}{path}#{line}",
+    # repo="https://github.com/TRACER-LULab/InverseLangevinApproximations.jl/blob/{commit}{path}#{line}",
     sitename="InverseLangevinApproximations.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
@@ -28,6 +28,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/TRACER-LULab/InverseLangevinApproximations.jl",
+    # repo="github.com/TRACER-LULab/InverseLangevinApproximations.jl",
     devbranch="main",
 )
