@@ -14,6 +14,7 @@ A Julia package for approximating the inverse of the Langevin function, ℒ.
 using Plots
 using InteractiveUtils
 using InverseLangevinApproximations
+using Markdown
 L(x) = x==zero(x) ? 0 : coth(x) - 1/x
 x_true = range(0.0, 10.0, length = 101)
 y = L.(x_true)
