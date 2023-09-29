@@ -9,7 +9,8 @@ bib = CitationBibliography(
 
 DocMeta.setdocmeta!(InverseLangevinApproximations, :DocTestSetup, :(using InverseLangevinApproximations); recursive=true)
 
-makedocs(bib;
+makedocs(;
+    plugins = [bib],
     modules=[InverseLangevinApproximations],
     authors="Carson Farmer <59753859+cfarm6@users.noreply.github.com> and contributors",
     repo="https://github.com/cfarm6/InverseLangevinApproximations.jl/blob/{commit}{path}#{line}",
