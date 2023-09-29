@@ -26,7 +26,5 @@ for f in fs
     plot!(p, y, rel_error, label = string(f))
 end
 savefig(p ,"example.png")
-nothing
+Markdown.parse("![example](example.png)")
 ```
-
-![](example.png)
