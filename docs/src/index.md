@@ -4,8 +4,11 @@ CurrentModule = InverseLangevinApproximations
 
 # InverseLangevinApproximations
 
-Documentation for [InverseLangevinApproximations](https://github.com/cfarm6/InverseLangevinApproximations.jl).
+A Julia package for approximating the inverse of the Langevin function, ℒ.
 
+```math
+\mathcal{L}(x) = \coth(x) - \frac{1}{x}
+```
 
 ```@eval
 using Plots
@@ -22,7 +25,7 @@ for f in fs
     rel_error = abs.((x .- x_true) ./ x_true)
     plot!(p, y, rel_error, label = string(f))
 end
-savefig("example.png")
+savefig(p ,"example.png")
 nothing
 ```
 
