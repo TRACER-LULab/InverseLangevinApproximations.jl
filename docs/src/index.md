@@ -10,11 +10,11 @@ A Julia package for approximating the inverse of the Langevin function, ℒ.
 \mathcal{L}(x) = \coth(x) - \frac{1}{x}
 ```
 
-```@eval
+```@example
 using CairoMakie
 using InteractiveUtils
 using InverseLangevinApproximations
-using Markdown
+using Markdown # hide
 L(x) = x==zero(x) ? 0 : coth(x) - 1/x
 x_true = range(0.0, 10.0, length = 101)
 y = L.(x_true)
@@ -28,6 +28,6 @@ for f in fs
     lines!(ax, y, rel_error, label = string(f))
 end
 axislegend(position = :lt)
-save("example.png", f)
-Markdown.parse("![example](example.png)")
+save("example.png", f) # hide
+Markdown.parse("![example](example.png)") # hide
 ```
