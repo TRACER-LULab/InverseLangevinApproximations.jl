@@ -1,6 +1,6 @@
 # InverseLangevinApproximations
 
-Main set of models are from "Approximation of the inverse Langevin function revisited" by Radosław Jedynak
+Approximations for the inverse of the Langevin function, ℒ.
 
 ## Citing
 
