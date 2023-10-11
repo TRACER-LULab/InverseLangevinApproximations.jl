@@ -1,11 +1,18 @@
 module InverseLangevinApproximations
 
 using InteractiveUtils
+using DocStringExtensions
 
 export inverse_langevin_approximation
 
 abstract type AbstractInverseLangevinApproximation end
 
+"""
+$(TYPEDSIGNATURES)
+Method for computing the inverse Langevin function.
+- `m`: The approximation Method
+- `y`: The value of the Langevin Function
+"""
 @inline function inverse_langevin_approximation(m::AbstractInverseLangevinApproximation, y)
     error("Method is not implemented for $m")
 end
