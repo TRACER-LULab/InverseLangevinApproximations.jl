@@ -8,6 +8,6 @@ using InteractiveUtils
     fs = filter(use_model, subtypes(InverseLangevinApproximations.AbstractInverseLangevinApproximation))
     for f in fs
         @test f() isa InverseLangevinApproximations.AbstractInverseLangevinApproximation
-        @test inverse_langevin_approximation(f(), 0.0) ≈ 0.0
+        @test inverse_langevin_approximation(0.0, f()) ≈ 0.0
     end
 end

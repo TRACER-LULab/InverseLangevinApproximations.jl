@@ -10,10 +10,10 @@ abstract type AbstractInverseLangevinApproximation end
 """
 $(TYPEDSIGNATURES)
 Method for computing the inverse Langevin function.
-- `m`: The approximation Method
 - `y`: The value of the Langevin Function
+- `m`: The approximation Method
 """
-@inline function inverse_langevin_approximation(m::AbstractInverseLangevinApproximation, y)
+@inline function inverse_langevin_approximation(y, m::AbstractInverseLangevinApproximation)
     error("Method is not implemented for $m")
 end
 

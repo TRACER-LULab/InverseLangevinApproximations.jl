@@ -7,7 +7,7 @@ From Ref. [cohen1991pade](@cite):
 """
 struct CohenRounded3_2 <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::CohenRounded3_2, y)
+@inline function inverse_langevin_approximation(y, ::CohenRounded3_2)
     y * (3 - y^2) / (1 - y^2)
 end
 """
@@ -17,9 +17,9 @@ From Ref. [cohen1991pade](@cite):
 \\mathcal{L}^{-1}(y) \\approx y\\frac{3-\\frac{36}{35}y^2}{1-\\frac{33}{35}y^2}
 ```
 """
-struct CohenExact3_2 <:AbstractInverseLangevinApproximation end
+struct CohenExact3_2 <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::CohenExact3_2, y)
+@inline function inverse_langevin_approximation(y, ::CohenExact3_2)
     y * (3 - 36 / 35 * y^2) / (1 - 33 / 35 * y^2)
 end
 
@@ -32,7 +32,7 @@ From Ref. [cohen1991pade](@cite):
 """
 struct PadeApproximation3_2 <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::PadeApproximation3_2, y)
+@inline function inverse_langevin_approximation(y, ::PadeApproximation3_2)
     y * (3 - 36 / 35 * y^2) / (1 - 33 / 35 * y^2)
 end
 """
@@ -43,7 +43,7 @@ From Ref. [puso2003mechanistic](@cite):
 ```
 """
 struct PusoApproximation <: AbstractInverseLangevinApproximation end
-@inline function inverse_langevin_approximation(::PusoApproximation, y)
+@inline function inverse_langevin_approximation(y, ::PusoApproximation)
     3 * y / (1 - y^3)
 end
 
@@ -56,7 +56,7 @@ From Ref. [treloar1976mechanics](@cite):
 """
 struct TreloarApproximation <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::TreloarApproximation, y)
+@inline function inverse_langevin_approximation(y, ::TreloarApproximation)
     3 * y / (1 - (3 / 5 * y^2 + 36 / 175 * y^4 + 108 / 875 * y^6))
 end
 
@@ -69,7 +69,7 @@ From Ref. [warner1972kinetic](@cite):
 """
 struct WarnerApproximation <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::WarnerApproximation, y)
+@inline function inverse_langevin_approximation(y, ::WarnerApproximation)
     3 * y / (1 - y^2)
 end
 
@@ -82,7 +82,7 @@ From Ref. [kuhn1942beziehungen](@cite):
 """
 struct KuhnGrunApproximation <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::KuhnGrunApproximation, y)
+@inline function inverse_langevin_approximation(y, ::KuhnGrunApproximation)
     3y + 9y^3 / 5 + 297y^5 / 175 + 1539y^7 / 875 + 126117y^9 / 67375 + 43733439y^11 / 21896875 + 231321177y^13 / 109484375 + 20495009043y^15 / 9306171875 + 1073585186448381y^17 / 476522530859375 + 4387445039583y^19 / 1944989921875
 end
 """
@@ -98,7 +98,7 @@ From Ref. [bergstrom1999large](@cite):
 """
 struct BergstromApproximation <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::BergstromApproximation, y)
+@inline function inverse_langevin_approximation(y, ::BergstromApproximation)
     if abs(y) < 0.84136
         return 1.31446tan(1.58986y) + 0.91209y
     elseif 0.84136 <= abs(y) < 1.0
@@ -114,7 +114,7 @@ From Ref. [jedynak2015approximation](@cite):
 ```
 """
 struct PadeApproximation_1_4 <: AbstractInverseLangevinApproximation end
-@inline function inverse_langevin_approximation(::PadeApproximation_1_4, y)
+@inline function inverse_langevin_approximation(y, ::PadeApproximation_1_4)
     3y / (1 - 3y^2 / 5 - 36y^4 / 175)
 end
 
@@ -127,7 +127,7 @@ From Ref. [jedynak2015approximation](@cite):
 """
 struct PadeApproximation_1_2 <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::PadeApproximation_1_2, y)
+@inline function inverse_langevin_approximation(y, ::PadeApproximation_1_2)
     3y / (1 - 3y^2 / 5)
 end
 
@@ -140,7 +140,7 @@ From Ref. [jedynak2015approximation](@cite):
 """
 struct PadeApproximation_5_0 <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::PadeApproximation_5_0, y)
+@inline function inverse_langevin_approximation(y, ::PadeApproximation_5_0)
     3y + 9y^3 / 5 + 297y^5 / 175
 end
 
@@ -153,7 +153,7 @@ From Ref. [jedynak2015approximation](@cite):
 """
 struct PadeApproximation_3_0 <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::PadeApproximation_3_0, y)
+@inline function inverse_langevin_approximation(y, ::PadeApproximation_3_0)
     3y + 9y^3 / 5
 end
 
@@ -166,7 +166,7 @@ From Ref. [jedynak2017new](@cite):
 """
 struct Jedynak2017 <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::Jedynak2017, y)
+@inline function inverse_langevin_approximation(y, ::Jedynak2017)
     y * (3 - 773 / 768 * y^2 - 1300 / 1351 * y^4 + 501 / 340 * y^6 - 678 / 1385 * y^8) / (1 - y) / (1 + 866 / 853 * y)
 end
 
@@ -179,7 +179,7 @@ From Ref. [darabi2015simple](@cite):
 """
 struct DarabiItskov <: AbstractInverseLangevinApproximation end
 
-@inline function inverse_langevin_approximation(::DarabiItskov, y)
+@inline function inverse_langevin_approximation(y, ::DarabiItskov)
     y * (y^2 - 3y + 3) / (1 - y)
 end
 
@@ -191,6 +191,7 @@ From Ref. [nguessong2014new](@cite):
 ```
 """
 struct NguessongBedaPeyraut <: AbstractInverseLangevinApproximation end
-@inline function inverse_langevin_approximation(::NguessongBedaPeyraut, y)
+
+@inline function inverse_langevin_approximation(y, ::NguessongBedaPeyraut)
     y * (3 - y^2) / (1 - y^2) - 0.488y^3.243 + 3.311y^4.789 * (y - 0.76) * (y - 1)
 end
