@@ -1,8 +1,6 @@
 # InverseLangevinApproximations
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://tracer-lulab.github.io/InverseLangevinApproximations.jl/stable/)
- 
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://tracer-lulab.github.io/InverseLangevinApproximations.jl/dev/)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://tracer-lulab.github.io/InverseLangevinApproximations.jl/stable/) [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://tracer-lulab.github.io/InverseLangevinApproximations.jl/dev/)
 
 `InverseLangevinApproximations.jl` is a library for utilizing different approximation of the inverse of the Langevin function, ℒ. The approximations are primarily used in polymer mechanics; however, due to the potential use of the function in other areas of physics, the library is not limited to polymer mechanics.
 
