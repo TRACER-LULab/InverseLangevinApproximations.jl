@@ -23,7 +23,7 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
-        "Approximations" => "methods.md"
+        "API" => "methods.md"
     ],
 )
 

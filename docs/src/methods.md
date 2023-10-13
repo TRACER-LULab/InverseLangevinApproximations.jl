@@ -18,7 +18,7 @@ Order = [:function]
 
 ```@autodocs
 Modules = [InverseLangevinApproximations]
-Filter = x -> typeof(x) === UnionAll && x <:InverseLangevinApproximations.AbstractInverseLangevinApproximation
+Filter = x -> typeof(x)===DataType && x <:InverseLangevinApproximations.AbstractInverseLangevinApproximation
 ```
 
 # References
