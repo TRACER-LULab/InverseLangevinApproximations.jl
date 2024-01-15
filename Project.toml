@@ -1,7 +1,7 @@
 name = "InverseLangevinApproximations"
 uuid = "b82787f2-62be-403e-9078-6d9feafd7ee3"
 authors = ["Carson Farmer <59753859+cfarm6@users.noreply.github.com> and contributors"]
-version = "0.1.1"
+version = "0.2"
 
 [deps]
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
